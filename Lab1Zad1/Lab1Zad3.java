@@ -10,6 +10,9 @@ public class Lab1Zad3 {
 
         System.out.println("Задача 3.8:");
         zad3.zadach3_8(4);
+
+        System.out.println("Задача 3.10:");
+        zad3.guessGame();
     }
 }
 
@@ -52,5 +55,26 @@ class Zad3 {
 
             System.out.println();
         }
+    }
+
+    public void guessGame() {
+        java.util.Random random = new java.util.Random();
+        java.util.Scanner scanner = new java.util.Scanner(System.in);
+
+        int secret = random.nextInt(10);
+        int attempts = 0;
+        int guess = 0;
+
+        while (guess != secret) {
+            System.out.print("Введите число от 0 до 9: ");
+            guess = scanner.nextInt();
+            attempts++;
+
+            if (guess != secret) {
+                System.out.println("Мимо");
+            }
+        }
+
+        System.out.println("Вы угадали число за " + attempts + " попытки");
     }
 }
