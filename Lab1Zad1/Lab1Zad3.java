@@ -2,14 +2,14 @@ public class Lab1Zad3 {
     public static void main(String[] args) {
         Zad3 zad3 = new Zad3();
 
-        System.out.println("Задача 3.2: " + zad3.zadach3_2(5));
-        System.out.println("Задача 3.3: " + zad3.zadach3_3(9));
+        System.out.println("Задача 3.2: " + zad3.reverseListNums(5));
+        System.out.println("Задача 3.3: " + zad3.chet(9));
 
         System.out.println("Задача 3.7:");
-        zad3.zadach3_7(4);
+        zad3.square(4);
 
         System.out.println("Задача 3.8:");
-        zad3.zadach3_8(4);
+        zad3.leftTriangle(4);
 
         System.out.println("Задача 3.10:");
         zad3.guessGame();
@@ -17,7 +17,7 @@ public class Lab1Zad3 {
 }
 
 class Zad3 {
-    public String zadach3_2(int x) {
+    public String reverseListNums(int x) {
         String result = "";
 
         for (int i = x; i >= 0; i--) {
@@ -27,7 +27,7 @@ class Zad3 {
         return result;
     }
 
-    public String zadach3_3(int x) {
+    public String chet(int x) {
         String result = "";
 
         for (int i = 0; i <= x; i = i + 2) {
@@ -37,7 +37,7 @@ class Zad3 {
         return result;
     }
 
-    public void zadach3_7(int x) {
+    public void square(int x) {
         for (int i = 0; i < x; i++) {
             for (int j = 0; j < x; j++) {
                 System.out.print("*");
@@ -47,7 +47,7 @@ class Zad3 {
         }
     }
 
-    public void zadach3_8(int x) {
+    public void leftTriangle(int x) {
         for (int i = 1; i <= x; i++) {
             for (int j = 0; j < i; j++) {
                 System.out.print("*");
@@ -63,18 +63,23 @@ class Zad3 {
 
         int secret = random.nextInt(10);
         int attempts = 0;
-        int guess = 0;
+        int guess = -1;
 
         while (guess != secret) {
             System.out.print("Введите число от 0 до 9: ");
+
             guess = scanner.nextInt();
             attempts++;
 
             if (guess != secret) {
-                System.out.println("Мимо");
+                System.out.println("Вы не угадали");
             }
         }
 
-        System.out.println("Вы угадали число за " + attempts + " попытки");
+        System.out.println(
+                "Вы угадали! Вы отгадали число за "
+                        + attempts
+                        + " попытки"
+        );
     }
 }

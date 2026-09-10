@@ -2,14 +2,17 @@ public class Lab1Zad4 {
     public static void main(String[] args) {
         Zad4 zad4 = new Zad4();
 
-        System.out.println("Задача 4.3: "
-                + zad4.zadach4_3(
-                new int[]{1, -2, -7, 4, 2, 2, 5}
-        ));
+        System.out.println(
+                "Задача 4.3: "
+                        + zad4.maxAbs(
+                        new int[]{1, -2, -7, 4, 2, 2, 5}
+                )
+        );
 
         System.out.println("Задача 4.4:");
+
         zad4.printArray(
-                zad4.zadach4_4(
+                zad4.add(
                         new int[]{1, 2, 3, 4, 5},
                         9,
                         3
@@ -17,8 +20,9 @@ public class Lab1Zad4 {
         );
 
         System.out.println("Задача 4.5:");
+
         zad4.printArray(
-                zad4.zadach4_5(
+                zad4.add(
                         new int[]{1, 2, 3, 4, 5},
                         new int[]{7, 8, 9},
                         3
@@ -27,14 +31,15 @@ public class Lab1Zad4 {
 
         int[] array = {1, 2, 3, 4, 5};
 
-        zad4.zadach4_6(array);
+        zad4.reverse(array);
 
         System.out.println("Задача 4.6:");
         zad4.printArray(array);
 
         System.out.println("Задача 4.9:");
+
         zad4.printArray(
-                zad4.zadach4_9(
+                zad4.findAll(
                         new int[]{1, 2, 3, 8, 2, 2, 9},
                         2
                 )
@@ -43,7 +48,7 @@ public class Lab1Zad4 {
 }
 
 class Zad4 {
-    public int zadach4_3(int[] arr) {
+    public int maxAbs(int[] arr) {
         int max = arr[0];
 
         for (int i = 0; i < arr.length; i++) {
@@ -55,7 +60,7 @@ class Zad4 {
         return max;
     }
 
-    public int[] zadach4_4(int[] arr, int x, int pos) {
+    public int[] add(int[] arr, int x, int pos) {
         int[] result = new int[arr.length + 1];
 
         for (int i = 0; i < pos; i++) {
@@ -71,7 +76,7 @@ class Zad4 {
         return result;
     }
 
-    public int[] zadach4_5(int[] arr, int[] ins, int pos) {
+    public int[] add(int[] arr, int[] ins, int pos) {
         int[] result = new int[arr.length + ins.length];
 
         for (int i = 0; i < pos; i++) {
@@ -89,7 +94,7 @@ class Zad4 {
         return result;
     }
 
-    public void zadach4_6(int[] arr) {
+    public void reverse(int[] arr) {
         for (int i = 0; i < arr.length / 2; i++) {
             int temp = arr[i];
 
@@ -98,7 +103,7 @@ class Zad4 {
         }
     }
 
-    public int[] zadach4_9(int[] arr, int x) {
+    public int[] findAll(int[] arr, int x) {
         int count = 0;
 
         for (int i = 0; i < arr.length; i++) {

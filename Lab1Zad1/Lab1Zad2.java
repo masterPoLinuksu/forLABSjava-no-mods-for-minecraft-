@@ -2,16 +2,16 @@ public class Lab1Zad2 {
     public static void main(String[] args) {
         Zad2 zad2 = new Zad2();
 
-        System.out.println("Задача 2.1: " + zad2.zadach2_1(-3));
-        System.out.println("Задача 2.4: " + zad2.zadach2_4(5, 7));
-        System.out.println("Задача 2.5: " + zad2.zadach2_5(5, 7, 7));
-        System.out.println("Задача 2.8: " + zad2.zadach2_8(44));
-        System.out.println("Задача 2.9: " + zad2.zadach2_9(5));
+        System.out.println("Задача 2.1: " + zad2.abs(-3));
+        System.out.println("Задача 2.4: " + zad2.makeDecision(5, 7));
+        System.out.println("Задача 2.5: " + zad2.max3(5, 7, 7));
+        System.out.println("Задача 2.8: " + zad2.age(44));
+        System.out.println("Задача 2.9: " + zad2.day(5));
     }
 }
 
 class Zad2 {
-    public int zadach2_1(int x) {
+    public int abs(int x) {
         if (x < 0) {
             return -x;
         }
@@ -19,7 +19,7 @@ class Zad2 {
         return x;
     }
 
-    public String zadach2_4(int x, int y) {
+    public String makeDecision(int x, int y) {
         if (x < y) {
             return x + "<" + y;
         }
@@ -31,7 +31,7 @@ class Zad2 {
         return x + "==" + y;
     }
 
-    public int zadach2_5(int x, int y, int z) {
+    public int max3(int x, int y, int z) {
         int max = x;
 
         if (y > max) {
@@ -45,7 +45,7 @@ class Zad2 {
         return max;
     }
 
-    public String zadach2_8(int x) {
+    public String age(int x) {
         int lastTwo = x % 100;
         int last = x % 10;
 
@@ -64,24 +64,24 @@ class Zad2 {
         return x + " лет";
     }
 
-    public String zadach2_9(int x) {
+    public String day(int x) {
         switch (x) {
             case 1:
-                return "пн";
+                return "понедельник";
             case 2:
-                return "вт";
+                return "вторник";
             case 3:
-                return "ср";
+                return "среда";
             case 4:
-                return "чт";
+                return "четверг";
             case 5:
-                return "пт";
+                return "пятница";
             case 6:
-                return "сб";
+                return "суббота";
             case 7:
-                return "вс";
+                return "воскресенье";
             default:
-                return "what is that bro pls write Den` Nedeli";
+                return "это не день недели";
         }
     }
 }
